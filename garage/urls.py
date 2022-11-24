@@ -19,5 +19,5 @@ from car import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.cars)
+    path('', views.cars, name="cars")
 ]

@@ -1,12 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    CARS
-</body>
-</html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %} 
+
+       <div class="row row-cols-5 row-cols-md-5 g-4">
+            {% for car in cars %}
+        <div class="col">
+
+            <div class="card">
+            <img src="{% static 'images/' %}{{ car.image }}" height="150px" width="150px" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Car: {{ car.number }}. Type: {{ car.get_cartype_display }}.</h5>
+                <p class="card-text">Manufacturer: {{ car.manufacturer }}</p>
+            </div>
+            </div>
+        </div>
+        {% endfor %}
+
+        </div>
+{% endblock %}
