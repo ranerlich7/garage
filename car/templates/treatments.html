@@ -1,5 +1,5 @@
-{% load static %}
 {% extends 'base.html' %}
+{% load static %}
 
                 {% block main %}
                 <main>
@@ -51,7 +51,7 @@
                                             <td>{{ t.employee }}</td>
                                             <td>{{t.car }}</td>
                                             <td>{{t.car.manufacturer}}</td>
-                                            <td><a href="{% url treatment.html %}" class="btn btn-info">Edit</a></td>
+                                            <td><a href="{% url 'car:edit_treatment' %}" class="btn btn-info">Edit</a></td>
                                         </tr>
                                         {% endfor %}
 <!-------------------------->

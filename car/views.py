@@ -31,5 +31,7 @@ def treatment(request):
     
         return render(request,"treatment.html",{'form':form})
         
-            
+def charts(request):
+    t = Treatment.objects.all()[0]
+    return render(request,"charts.html",{'t':t})
         
