@@ -1,16 +1,17 @@
 from django.forms import ModelForm
-from django
+from .models import Car,Treatment
 
 class CarForm(ModelForm):
     class Meta:
         model=Car
         fields='__all__'
 
-    def clean_number(self):
-        number = self.cleaned_data['number']
-        if '000'
+        
 
-
+class TreatmentForm(ModelForm):
+    class Meta:
+        model=Treatment
+        fields='__all__'
 
 
 # from django import forms
