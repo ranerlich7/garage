@@ -25,9 +25,9 @@ class Employee(User):
 
 class Treatment(models.Model):
     class TreatmentType(models.IntegerChoices):
-        TEN_TOUSAND = 1, '10,000'
+        TEN_TOUSAND = 1, '10,000 Treatment'
         BREAKS = 2, 'BREAKS'
-        THIRTY_THOUSAND = 3, '30,000'        
+        THIRTY_THOUSAND = 3, '30,000 Treatment'        
     type = models.IntegerField(choices=TreatmentType.choices, null=False)
     price = models.DecimalField(decimal_places=2, max_digits=10 ,null=False)
     employee = models.ForeignKey(Employee, on_delete=models.CASCADE)
