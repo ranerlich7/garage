@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages 
-from .models import Car, Employee
+from .models import Car, Employee, Treatment
 # Create your views here.
 from .forms import TreatmentForm
 
@@ -9,7 +9,8 @@ def cars(request):
     return render(request,'cars.html', {'cars':cars})
 
 def treatments(request):
-    return render(request, 'treatments.html')
+    treatments = Treatment.objects.all()
+    return render(request, 'treatments.html', {'treatments':treatments})
 
     
 def treatment(request):
