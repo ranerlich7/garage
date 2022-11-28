@@ -8,6 +8,10 @@ def cars(request):
     cars = Car.objects.all()
     return render(request,'cars.html', {'cars':cars})
 
+def treatments(request):
+    return render(request, 'treatments.html')
+
+    
 def treatment(request):
     form = TreatmentForm()
     # cars = Car.objects.all()
